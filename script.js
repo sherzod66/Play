@@ -10,15 +10,15 @@ const verticalLine = new URL('assets/vertical.glb', import.meta.url);
 //const leftLine = new URL('assets/leftLine.glb', import.meta.url);
 //const rightLine = new URL('assets/rightLine.glb', import.meta.url);
 
-
-const renderer = new THREE.WebGLRenderer({ antialias: true });
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement)
-
 const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera(60, innerWidth / innerHeight, 0.1, 1000)
-camera.position.set(-2, 0, 5)
+camera.position.set(-2, 0, 5);
+
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
 
 const orbit = new OrbitControls(camera, renderer.domElement)
 orbit.update();
